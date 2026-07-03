@@ -1,0 +1,30 @@
+{
+  "name": "agent-case-share-skill",
+  "version": "0.1.0",
+  "description": "Publish and edit Agent Case Share tasks, articles, images, and reusable assets.",
+  "author": {
+    "name": "parkerluxu",
+    "url": "https://github.com/parkerluxu"
+  },
+  "homepage": "https://github.com/parkerluxu/agent-case-share-skill",
+  "repository": "https://github.com/parkerluxu/agent-case-share-skill",
+  "license": "MIT",
+  "keywords": ["agent-case-share", "publishing", "skills"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Agent Case Share",
+    "shortDescription": "Publish cases and articles to Agent Case Share.",
+    "longDescription": "Publish and edit Agent Case Share tasks, articles, Markdown images, and reusable assets from AI coding agents.",
+    "developerName": "parkerluxu",
+    "category": "Productivity",
+    "capabilities": ["Write"],
+    "websiteURL": "https://github.com/parkerluxu/agent-case-share-skill",
+    "defaultPrompt": [
+      "Use Agent Case Share to draft a hidden case.",
+      "Publish this Markdown article as a draft.",
+      "Upload these reusable assets to a case."
+    ],
+    "brandColor": "#2563EB"
+  }
+}
+

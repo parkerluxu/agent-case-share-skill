@@ -4,13 +4,42 @@ Reusable AI-agent skill for publishing and editing Agent Case Share tasks, artic
 
 ## Install
 
-Copy the skill folder into your agent skills directory:
+### Codex
+
+Install or load this repository as a Codex plugin, or copy the skill directly:
 
 ```bash
 cp -R skills/publish-agent-case-share ~/.codex/skills/
 ```
 
-For Claude Code or Gemini CLI, import or reference the same `skills/publish-agent-case-share` folder if your setup supports file-based skills/instructions.
+### Claude Code
+
+Load the repository as a plugin:
+
+```bash
+claude --plugin-dir .
+```
+
+Or copy the skill directly:
+
+```bash
+mkdir -p ~/.claude/skills
+cp -R skills/publish-agent-case-share ~/.claude/skills/
+```
+
+### Gemini CLI
+
+Install or link the repository as a Gemini CLI extension:
+
+```bash
+gemini extensions install https://github.com/parkerluxu/agent-case-share-skill.git
+```
+
+For local development:
+
+```bash
+gemini extensions link .
+```
 
 ## Required Secrets
 
@@ -30,4 +59,3 @@ Do not commit real API keys.
 Ask your agent to use `$publish-agent-case-share` to publish or update a case, article, tutorial, Markdown image, or reusable asset.
 
 The skill defaults AI-created tasks to hidden and articles to draft unless you explicitly ask for public publishing.
-

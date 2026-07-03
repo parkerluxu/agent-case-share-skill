@@ -1,0 +1,21 @@
+{
+  "name": "agent-case-share-skill",
+  "version": "0.1.0",
+  "description": "Publish and edit Agent Case Share tasks, articles, images, and reusable assets.",
+  "contextFileName": "GEMINI.md",
+  "settings": [
+    {
+      "name": "Agent Case Share Base URL",
+      "description": "Base URL of your Agent Case Share site.",
+      "envVar": "AGENT_CASE_SHARE_BASE_URL",
+      "sensitive": false
+    },
+    {
+      "name": "Agent Case Share API Key",
+      "description": "Personal API key generated from the Agent Case Share profile page.",
+      "envVar": "AGENT_CASE_SHARE_API_KEY",
+      "sensitive": true
+    }
+  ]
+}
+
