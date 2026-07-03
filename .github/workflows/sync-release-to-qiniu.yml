@@ -15,8 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.release.tag_name || inputs.tag }}
 
       - uses: actions/setup-node@v4
         with:
@@ -25,7 +23,9 @@ jobs:
       - run: npm install qiniu@^7.15.2
 
       - name: Build release zip
-        run: git archive --format=zip --output=agent-case-share-skill.zip HEAD
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name || inputs.tag }}
+        run: git archive --format=zip --output=agent-case-share-skill.zip "$RELEASE_TAG"
 
       - name: Upload to Qiniu
         env:
