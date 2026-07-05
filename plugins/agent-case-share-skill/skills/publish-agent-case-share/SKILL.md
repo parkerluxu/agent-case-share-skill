@@ -10,7 +10,8 @@ Use this skill to publish content to the Agent Case Share platform.
 ## Safety
 
 - Never ask for the user's password.
-- Ask for the site base URL and personal API key if they are missing.
+- Use `https://agentcaseshare.cn/` as the default base URL; ask only for a different site if the user mentions one.
+- Ask for the personal API key if it is missing.
 - Treat the API key as a secret. Do not print it, commit it, log it, or include it in generated files.
 - Default AI-generated tasks to `visibility: "HIDDEN"`.
 - Default AI-generated articles to `status: "DRAFT"`.
@@ -20,7 +21,7 @@ Use this skill to publish content to the Agent Case Share platform.
 
 Confirm:
 
-- Base URL, for example `https://your-domain.com`
+- Base URL, default `https://agentcaseshare.cn/`
 - Personal API key generated from `/profile`
 - Whether the user wants to create or edit a task/case, article/tutorial, Markdown image, reusable asset, or a combination
 
@@ -41,11 +42,12 @@ For endpoint fields, payload examples, responses, and error handling, read:
    - Article/tutorial editing -> `PATCH /api/articles/:slug`
 2. If Markdown contains local image paths, upload each image first and replace local paths with returned URLs.
 3. Normalize content into the required payload.
-4. Use `Authorization: Bearer <personal-api-key>`.
-5. Use hidden/draft defaults unless the user requested public publishing.
-6. For reusable assets, upload files first and place returned `asset` objects into `reusableAssets` when creating or updating the task.
-7. After success, report returned `slug`, `url`, `taskSlug`, or `taskUrl`.
-8. On API failure, show the returned `error` message and ask whether to revise and retry.
+4. Resolve the base URL from `AGENT_CASE_SHARE_BASE_URL`, the user, or default to `https://agentcaseshare.cn/`.
+5. Use `Authorization: Bearer <personal-api-key>`.
+6. Use hidden/draft defaults unless the user requested public publishing.
+7. For reusable assets, upload files first and place returned `asset` objects into `reusableAssets` when creating or updating the task.
+8. After success, report returned `slug`, `url`, `taskSlug`, or `taskUrl`.
+9. On API failure, show the returned `error` message and ask whether to revise and retry.
 
 ## Content Mapping
 
@@ -92,4 +94,3 @@ If the user says "publish publicly", "make it public", or gives an explicit prod
 - Article: `status: "PUBLISHED"`
 
 Otherwise keep AI-created content hidden/draft.
-

@@ -10,7 +10,7 @@ Use this skill to treat Agent Case Share as a readable knowledge base.
 ## Safety
 
 - Prefer public read APIs; no API key is needed for published content.
-- Ask for the site base URL if it is missing.
+- Use `https://agentcaseshare.cn/` as the default base URL; ask only for a different site if the user mentions one.
 - Ask for a personal API key only when the user needs hidden or draft content.
 - Treat the API key as a secret. Do not print it, commit it, log it, or include it in generated files.
 - Cite returned `url` values when summarizing or reusing content.
@@ -19,7 +19,7 @@ Use this skill to treat Agent Case Share as a readable knowledge base.
 
 Confirm:
 
-- Base URL, for example `https://your-domain.com`
+- Base URL, default `https://agentcaseshare.cn/`
 - What to find or read: categories, tags, cases, articles, news, projects, papers, a specific slug, or a URL
 - Optional personal API key for private content
 
@@ -36,7 +36,7 @@ For endpoint parameters, response shapes, and examples, read:
 
 ## Workflow
 
-1. Resolve the base URL from the user or `AGENT_CASE_SHARE_BASE_URL`.
+1. Resolve the base URL from `AGENT_CASE_SHARE_BASE_URL`, the user, or default to `https://agentcaseshare.cn/`.
 2. Classify the request:
    - Category discovery -> `GET /api/categories`
    - Tag discovery -> `GET /api/tags`
