@@ -1,6 +1,6 @@
 {
   "name": "agent-case-share-skill",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "description": "Publish and edit Agent Case Share tasks, articles, images, and reusable assets.",
   "author": {
     "name": "parkerluxu",
@@ -27,4 +27,3 @@
     "brandColor": "#2563EB"
   }
 }
-

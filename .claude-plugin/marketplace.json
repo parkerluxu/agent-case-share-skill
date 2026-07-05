@@ -7,7 +7,7 @@
     {
       "name": "agent-case-share-skill",
       "description": "Search, read, publish, and edit Agent Case Share content.",
-      "path": "./plugins/agent-case-share-skill"
+      "source": "./plugins/agent-case-share-skill"
     }
   ]
 }

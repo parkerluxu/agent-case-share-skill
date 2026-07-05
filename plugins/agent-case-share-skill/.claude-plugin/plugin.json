@@ -1,7 +1,7 @@
 {
   "name": "agent-case-share-skill",
   "description": "Publish and edit Agent Case Share tasks, articles, images, and reusable assets.",
-  "version": "0.1.0",
+  "version": "0.2.1",
   "author": {
     "name": "parkerluxu"
   },
@@ -9,4 +9,3 @@
   "repository": "https://github.com/parkerluxu/agent-case-share-skill",
   "license": "MIT"
 }
-

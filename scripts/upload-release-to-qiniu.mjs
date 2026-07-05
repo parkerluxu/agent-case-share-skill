@@ -9,7 +9,7 @@ const bucket = process.env.QINIU_BUCKET?.trim();
 const tag = process.env.RELEASE_TAG?.trim();
 
 if (!filePath || !accessKey || !secretKey || !bucket || !tag) {
-  throw new Error("Usage: RELEASE_TAG=v0.1.0 node scripts/upload-release-to-qiniu.mjs <zip>");
+  throw new Error("Usage: RELEASE_TAG=v0.2.1 node scripts/upload-release-to-qiniu.mjs <zip>");
 }
 
 const fileName = path.basename(filePath);
@@ -49,4 +49,3 @@ for (const key of keys) {
   await upload(key);
   console.log(`Uploaded ${key}`);
 }
-
