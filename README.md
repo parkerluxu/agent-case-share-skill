@@ -9,19 +9,19 @@ Reusable AI-agent skills for searching, reading, publishing, and editing Agent C
 Add this repository as a marketplace:
 
 ```bash
-codex plugin marketplace add parkerluxu/agent-case-share-skill
+codex plugin marketplace add parkerluxu/agent-case-share-skills
 ```
 
-Then install `agent-case-share-skill` from the Codex plugins UI.
+Then install `agent-case-share-skills` from the Codex plugins UI.
 
 Or copy the skill directly:
 
 ```bash
-cp -R plugins/agent-case-share-skill/skills/publish-agent-case-share ~/.codex/skills/
-cp -R plugins/agent-case-share-skill/skills/search-agent-case-share ~/.codex/skills/
-cp -R plugins/agent-case-share-skill/skills/search-agent-case-share-personal ~/.codex/skills/
-cp -R plugins/agent-case-share-skill/skills/agent-case-share-auto-retrieval ~/.codex/skills/
-cp -R plugins/agent-case-share-skill/skills/configure-agent-case-share ~/.codex/skills/
+cp -R plugins/agent-case-share-skills/skills/publish-agent-case-share ~/.codex/skills/
+cp -R plugins/agent-case-share-skills/skills/search-agent-case-share ~/.codex/skills/
+cp -R plugins/agent-case-share-skills/skills/search-agent-case-share-personal ~/.codex/skills/
+cp -R plugins/agent-case-share-skills/skills/agent-case-share-auto-retrieval ~/.codex/skills/
+cp -R plugins/agent-case-share-skills/skills/configure-agent-case-share ~/.codex/skills/
 ```
 
 ### Claude Code
@@ -29,19 +29,19 @@ cp -R plugins/agent-case-share-skill/skills/configure-agent-case-share ~/.codex/
 Add this repository as a marketplace:
 
 ```bash
-/plugin marketplace add parkerluxu/agent-case-share-skill
-/plugin install agent-case-share-skill@agent-case-share
+/plugin marketplace add parkerluxu/agent-case-share-skills
+/plugin install agent-case-share-skills@agent-case-share
 ```
 
 Or copy the skill directly:
 
 ```bash
 mkdir -p ~/.claude/skills
-cp -R plugins/agent-case-share-skill/skills/publish-agent-case-share ~/.claude/skills/
-cp -R plugins/agent-case-share-skill/skills/search-agent-case-share ~/.claude/skills/
-cp -R plugins/agent-case-share-skill/skills/search-agent-case-share-personal ~/.claude/skills/
-cp -R plugins/agent-case-share-skill/skills/agent-case-share-auto-retrieval ~/.claude/skills/
-cp -R plugins/agent-case-share-skill/skills/configure-agent-case-share ~/.claude/skills/
+cp -R plugins/agent-case-share-skills/skills/publish-agent-case-share ~/.claude/skills/
+cp -R plugins/agent-case-share-skills/skills/search-agent-case-share ~/.claude/skills/
+cp -R plugins/agent-case-share-skills/skills/search-agent-case-share-personal ~/.claude/skills/
+cp -R plugins/agent-case-share-skills/skills/agent-case-share-auto-retrieval ~/.claude/skills/
+cp -R plugins/agent-case-share-skills/skills/configure-agent-case-share ~/.claude/skills/
 ```
 
 ### Gemini CLI
@@ -49,7 +49,7 @@ cp -R plugins/agent-case-share-skill/skills/configure-agent-case-share ~/.claude
 Install or link the repository as a Gemini CLI extension:
 
 ```bash
-gemini extensions install https://github.com/parkerluxu/agent-case-share-skill.git
+gemini extensions install https://github.com/parkerluxu/agent-case-share-skills.git
 ```
 
 For local development:
@@ -71,13 +71,13 @@ Create a personal API key from your Agent Case Share `/profile` page when publis
 From a clone of this repository, the command is:
 
 ```bash
-node plugins/agent-case-share-skill/skills/configure-agent-case-share/scripts/configure.mjs
+node plugins/agent-case-share-skills/skills/configure-agent-case-share/scripts/configure.mjs
 ```
 
 It hides the key while typing. Verify the setup without exposing credentials:
 
 ```bash
-node plugins/agent-case-share-skill/skills/configure-agent-case-share/scripts/configure.mjs --status
+node plugins/agent-case-share-skills/skills/configure-agent-case-share/scripts/configure.mjs --status
 ```
 
 ## CLI and CI Compatibility
@@ -110,10 +110,10 @@ The skill defaults AI-created tasks to hidden and articles to draft unless you e
 
 ## Release Mirror
 
-Publishing a GitHub release automatically uploads `agent-case-share-skill.zip` to the public Qiniu bucket `agent-case-share-images`:
+Publishing a GitHub release automatically uploads `agent-case-share-skills.zip` to the public Qiniu bucket `agent-case-share-images`:
 
-- `plugins/agent-case-share-skill/latest/agent-case-share-skill.zip`
-- `plugins/agent-case-share-skill/<tag>/agent-case-share-skill.zip`
+- `plugins/agent-case-share-skills/latest/agent-case-share-skills.zip`
+- `plugins/agent-case-share-skills/<tag>/agent-case-share-skills.zip`
 
 Required GitHub repository secrets:
 

@@ -5,10 +5,10 @@
   },
   "plugins": [
     {
-      "name": "agent-case-share-skill",
+      "name": "agent-case-share-skills",
       "source": {
         "source": "local",
-        "path": "./plugins/agent-case-share-skill"
+        "path": "./plugins/agent-case-share-skills"
       },
       "policy": {
         "installation": "AVAILABLE",

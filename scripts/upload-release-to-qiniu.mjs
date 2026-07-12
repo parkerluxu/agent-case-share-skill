@@ -14,8 +14,8 @@ if (!filePath || !accessKey || !secretKey || !bucket || !tag) {
 
 const fileName = path.basename(filePath);
 const keys = [
-  `plugins/agent-case-share-skill/latest/${fileName}`,
-  `plugins/agent-case-share-skill/${tag}/${fileName}`,
+  `plugins/agent-case-share-skills/latest/${fileName}`,
+  `plugins/agent-case-share-skills/${tag}/${fileName}`,
 ];
 
 const mac = new qiniu.auth.digest.Mac(accessKey, secretKey);
