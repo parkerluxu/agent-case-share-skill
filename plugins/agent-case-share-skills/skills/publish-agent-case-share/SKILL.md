@@ -82,6 +82,19 @@ For a task/case:
 - `articleTitle`, `articleContent`: include when the user wants an initial recap article
 - `reusableAssets`: include asset objects returned by `POST /api/assets`
 
+### Workflow Field Formatting
+
+- Build `workflow` as a multi-line string with one logical step per actual newline. In JSON, use `\n` to encode those line breaks.
+- A step may optionally start with `1.`, `1)`, or `1、`; do not add or remove other content while normalizing it.
+- Do not infer steps from periods, spaces, or numbering when all content is on one line. For example, `1. xxx 2. yyy` remains one workflow item.
+- Use this shape when sending a task through the API:
+
+  ```json
+  {
+    "workflow": "1. 提取原始创意与目标体验\n2. 将感觉词翻译为可执行规则\n3. 确定胜负条件和道具行为"
+  }
+  ```
+
 For a standalone user asset:
 
 - Use `POST /api/assets/user`.

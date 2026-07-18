@@ -268,6 +268,22 @@ Optional fields:
 - `repositoryLicense`
 - `reusableAssets`: array of uploaded asset metadata objects, maximum 8 items
 
+### Workflow Field Formatting
+
+The `workflow` value is stored as a string and rendered by splitting on actual line breaks:
+
+- Send one logical step per actual newline. In JSON, `\n` is the escape sequence for an actual line break.
+- Optional step prefixes `1.`, `1)`, and `1、` are supported and may be stripped by the case page when displayed.
+- Do not split on periods, spaces, or numbering within a single line. `1. xxx 2. yyy` is one item, not two.
+
+Example:
+
+```json
+{
+  "workflow": "1. 提取原始创意与目标体验\n2. 将感觉词翻译为可执行规则\n3. 确定胜负条件和道具行为"
+}
+```
+
 Category guidance:
 
 - Prefer `categorySlug` over free-form `industry` when publishing or creating an article container.
